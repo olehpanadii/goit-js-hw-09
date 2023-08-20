@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
 
-elements = {
+const elements = {
   form: document.querySelector('.form'),
   submitBtn: document.querySelector('button'),
   firstDelay: document.querySelector('input[name="delay"]'),
