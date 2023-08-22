@@ -8,11 +8,13 @@ elements.btnStart.addEventListener('click', handlerOnStart);
 elements.btnStop.addEventListener('click', handlerOnStop);
 
 let timerId = null;
+elements.btnStop.disabled = true;
 
 function handlerOnStart() {
   timerId = setInterval(
     () => (
       (elements.btnStart.disabled = true),
+      (elements.btnStop.disabled = false),
       (elements.body.style.backgroundColor = getRandomHexColor())
     ),
     1000
@@ -20,6 +22,7 @@ function handlerOnStart() {
 }
 function handlerOnStop() {
   elements.btnStart.disabled = false;
+  elements.btnStop.disabled = true;
   clearInterval(timerId);
 }
 function getRandomHexColor() {
